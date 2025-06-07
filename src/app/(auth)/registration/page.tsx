@@ -1,7 +1,7 @@
 import { createClient } from "@/app/supabase/server";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { SignUp } from "@/features/auth/ui/SignUp";
+import { SignUp } from "@/features/auth";
 
 export const metadata: Metadata = {
   title: "Зарегистрироваться",

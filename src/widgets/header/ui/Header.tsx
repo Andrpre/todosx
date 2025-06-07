@@ -1,6 +1,6 @@
 import { createClient } from "@/app/supabase/server";
 
-import SignOut from "@/features/auth/ui/SignOut";
+import { SignOut } from "@/features/auth";
 
 const Header = async () => {
   const supabase = await createClient();
@@ -11,7 +11,7 @@ const Header = async () => {
   } = await supabase.auth.getUser();
 
   return (
-    <header className="flex items-center justify-between gap-4 w-full">
+    <header className="flex w-full items-center justify-between gap-4">
       <span>{user?.email ?? error?.message}</span>
       <SignOut />
     </header>
