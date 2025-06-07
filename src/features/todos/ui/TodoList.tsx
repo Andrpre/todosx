@@ -8,7 +8,7 @@ import {
   addTodo,
   toggleTodoCompletion,
   deleteTodo,
-} from "@/entities/todos/api";
+} from "@/entities/todos";
 import { TodoWithMeta } from "../model/ui";
 
 import TodoItem from "./TodoItem";

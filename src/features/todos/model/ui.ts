@@ -1,4 +1,4 @@
-import { Todo } from "@/entities/todos/model/model";
+import { Todo } from "@/entities/todos";
 
 export type TodoWithMeta = Todo & {
   deletable?: boolean;

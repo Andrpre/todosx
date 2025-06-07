@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "@/entities/auth/api";
 import { Button } from "@/shared/ui/button";
 
-export default function SignOut() {
+export function SignOut() {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
