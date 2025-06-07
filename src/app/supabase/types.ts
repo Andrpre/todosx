@@ -13,7 +13,7 @@ export type Database = {
         Row: {
           created_at: string
           id: number
-          is_completed: boolean | null
+          is_completed: boolean
           task: string | null
           user_id: number
         }

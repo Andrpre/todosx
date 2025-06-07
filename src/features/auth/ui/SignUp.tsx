@@ -7,7 +7,13 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/shared/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/shared/ui/card";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Loader2Icon } from "lucide-react";
@@ -38,11 +44,13 @@ export function SignUp({ className, ...props }: React.ComponentProps<"div">) {
   };
 
   return (
-    <div className={cn("flex flex-col gap-4 w-xs", className)} {...props}>
+    <div className={cn("flex w-xs flex-col gap-4", className)} {...props}>
       <Card>
         <CardHeader>
           <CardTitle>Создайте аккаунт</CardTitle>
-          <CardDescription>И получите доступ к управлению списком дел</CardDescription>
+          <CardDescription>
+            И получите доступ к управлению списком дел
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignUp}>
@@ -70,7 +78,11 @@ export function SignUp({ className, ...props }: React.ComponentProps<"div">) {
               </div>
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full" disabled={loading}>
-                  {loading ? <Loader2Icon className="animate-spin" /> : "Зарегистрироваться"}
+                  {loading ? (
+                    <Loader2Icon className="animate-spin" />
+                  ) : (
+                    "Зарегистрироваться"
+                  )}
                 </Button>
               </div>
             </div>

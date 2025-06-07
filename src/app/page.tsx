@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/app/supabase/server";
 
-import TodoList from "@/features/todos/ui/TodoList";
+import { TodoList } from "@/features/todos";
 import Header from "@/widgets/header/ui/Header";
 
 export default async function Home() {
@@ -16,9 +16,9 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col items-end min-h-screen p-5 gap-16 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen p-5 font-[family-name:var(--font-geist-sans)">
       <Header />
-      <main className="flex w-full justify-center">
+      <main className="mx-auto mt-4 flex max-w-2xl justify-center md:mt-20">
         <TodoList />
       </main>
     </div>

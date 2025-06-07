@@ -7,7 +7,13 @@ import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/shared/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/shared/ui/card";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Loader2Icon } from "lucide-react";
@@ -32,7 +38,7 @@ export function SignIn({ className, ...props }: React.ComponentProps<"div">) {
       setPassword("");
 
       toast.success("Вы успешно авторизовались");
-      router.push("/");
+      router.replace("/");
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Неизвестная ошибка");
     } finally {
@@ -41,11 +47,13 @@ export function SignIn({ className, ...props }: React.ComponentProps<"div">) {
   };
 
   return (
-    <div className={cn("flex flex-col gap-4 w-xs", className)} {...props}>
+    <div className={cn("flex w-xs flex-col gap-4", className)} {...props}>
       <Card>
         <CardHeader>
           <CardTitle>Войдите в систему</CardTitle>
-          <CardDescription>Чтобы получить доступ к управлению списком дел</CardDescription>
+          <CardDescription>
+            Чтобы получить доступ к управлению списком дел
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignIn}>
@@ -79,7 +87,10 @@ export function SignIn({ className, ...props }: React.ComponentProps<"div">) {
             </div>
             <div className="mt-4 text-center text-sm">
               Нет аккаунта?{" "}
-              <Link href="/registration" className="underline underline-offset-4">
+              <Link
+                href="/registration"
+                className="underline underline-offset-4"
+              >
                 Зарегистрироваться
               </Link>
             </div>

@@ -1,7 +1,7 @@
-import { getSession } from "@/entities/auth/api";
-import { SignIn } from "@/features/auth/ui/SignIn";
+import { createClient } from "@/app/supabase/server";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { SignIn } from "@/features/auth/ui/SignIn";
 
 export const metadata: Metadata = {
   title: "Войти в систему",
@@ -9,7 +9,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const session = await getSession();
+  const supabase = await createClient();
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
   if (session) {
     redirect("/");
   }

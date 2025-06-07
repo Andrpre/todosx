@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Loader2Icon } from "lucide-react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 import { signOut } from "@/entities/auth/api";
 import { Button } from "@/shared/ui/button";
